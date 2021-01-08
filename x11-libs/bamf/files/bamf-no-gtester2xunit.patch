@@ -1,24 +1,22 @@
-diff -rupN bamf.orig/configure.ac bamf/configure.ac
---- bamf.orig/configure.ac	2020-02-03 18:51:04.813711221 +0100
-+++ bamf/configure.ac	2020-02-03 18:52:11.374267203 +0100
-@@ -110,18 +110,6 @@ fi
- GTK_DOC_CHECK(1.0)
+diff --git a/configure b/configure
+index af65be1..20c4bbf 100755
+--- a/configure
++++ b/configure
+@@ -14650,17 +14650,6 @@ else
+ $as_echo "no" >&6; }
+ fi
  
- ###########################
--# gtester2xunit checks    #
--###########################
 -
--AC_PATH_PROG([PYTHON],[python])
--AC_MSG_CHECKING(for gtester2xunit dependencies)
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtester2xunit dependencies" >&5
+-$as_echo_n "checking for gtester2xunit dependencies... " >&6; }
 -if !($PYTHON -c "import libxslt, libxml2" 2> /dev/null); then
--  AC_MSG_RESULT([no])
--  AC_MSG_ERROR([You need to install python-libxslt1 and python-libxml2]);
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-  as_fn_error $? "You need to install python-libxslt1 and python-libxml2" "$LINENO" 5;
 -fi
--AC_MSG_RESULT([yes])
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
 -
--###########################
+ ###########################
  # Headless tests
  ###########################
- AC_ARG_ENABLE([headless-tests],
-
-
