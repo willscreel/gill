@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	eapply "${FILESDIR}/${P}-no-gtester2xunit.patch"
+	eapply "${FILESDIR}/${PN}-no-gtester2xunit.patch"
 	sed -i 's/-Werror//' configure
 	vala_src_prepare
 	default
