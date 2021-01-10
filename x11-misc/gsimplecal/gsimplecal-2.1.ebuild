@@ -16,3 +16,13 @@ DEPEND="
 		x11-libs/gtk+:3
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+		eautoreconf
+		default
+}
+
+src_install() {
+		emake DESTDIR="${D}" install
+		dodoc README NEWS AUTHORS ChangeLog
+}
