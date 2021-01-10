@@ -24,10 +24,14 @@ RDEPEND="
 		x11-misc/sxhkd
 "
 
+src_prepare() {
+		eapply "${FILESDIR}/${PV}-doc-whitelist.patch"
+}
+
 src_compile() {
 		emake CC="$(tc-getCC)"
 }
 
 src_install() {
-		emake DESTDIR="${D}" PREFIX=/usr install
+		emake DESTDIR="${D}" PREFIX=/usr DOC="/usr/share/doc/${PF}" install
 }

@@ -1,0 +1,35 @@
+diff --git a/Makefile b/Makefile
+index 16236a6..3b93c78 100644
+--- a/Makefile
++++ b/Makefile
+@@ -7,7 +7,7 @@ VERSION = 1.1
+ VPATH   = src
+ PREFIX ?= /usr/local
+ MAN     = ${PREFIX}/share/man
+-DOC     = ${PREFIX}/share/doc
++DOC    ?= ${PREFIX}/share/doc
+ SES     = /usr/share/xsessions
+ 
+ # source and object files
+@@ -56,18 +56,18 @@ clean:
+ 	rm -f *.o dk dkcmd
+ 
+ install: all
+-	mkdir -p ${DESTDIR}${PREFIX}/bin ${DESTDIR}${SES} ${DESTDIR}${MAN}/man1 ${DESTDIR}${DOC}/dk
++	mkdir -p ${DESTDIR}${PREFIX}/bin ${DESTDIR}${SES} ${DESTDIR}${MAN}/man1 ${DESTDIR}${DOC}
+ 	install -Dm755 dk dkcmd ${DESTDIR}${PREFIX}/bin/
+ 	sed "s/VERSION/${VERSION}/g" man/dk.1 > ${DESTDIR}${MAN}/man1/dk.1
+ 	cp -rfp man/dkcmd.1 ${DESTDIR}${MAN}/man1/dkcmd.1
+ 	chmod 644 ${DESTDIR}${MAN}/man1/dk.1 ${DESTDIR}${MAN}/man1/dkcmd.1
+-	cp -rf doc/* ${DESTDIR}${DOC}/dk
++	cp -rf doc/* ${DESTDIR}${DOC}
+ 	install -Dm644 dk.desktop ${DESTDIR}${SES}/
+ 
+ uninstall:
+ 	rm -f ${DESTDIR}${PREFIX}/bin/dk ${DESTDIR}${PREFIX}/bin/dkcmd
+ 	rm -f ${DESTDIR}${MAN}/man1/dk.1 ${DESTDIR}${MAN}/man1/dkcmd.1
+-	rm -rf ${DESTDIR}${DOC}/dk
++	rm -rf ${DESTDIR}${DOC}
+ 	rm -f ${DESTDIR}${SES}/dk.desktop
+ 
+ .PHONY: all debug fdebug leak clean install uninstall
