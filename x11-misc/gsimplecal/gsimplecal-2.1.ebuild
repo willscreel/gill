@@ -18,6 +18,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+		eapply "${FILESDIR}/sysctl.patch"
 		eautoreconf
 		default
 }
