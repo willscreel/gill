@@ -26,6 +26,7 @@ RDEPEND="
 
 src_prepare() {
 		eapply "${FILESDIR}/${PF}-doc-whitelist.patch"
+		default
 }
 
 src_compile() {
