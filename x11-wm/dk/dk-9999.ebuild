@@ -24,11 +24,6 @@ RDEPEND="
 		x11-misc/sxhkd
 "
 
-src_prepare() {
-		eapply "${FILESDIR}/${PF}-doc-whitelist.patch"
-		default
-}
-
 src_compile() {
 		emake CC="$(tc-getCC)"
 }
