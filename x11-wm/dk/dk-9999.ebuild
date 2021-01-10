@@ -25,7 +25,7 @@ RDEPEND="
 "
 
 src_prepare() {
-		eapply "${FILESDIR}/${PV}-doc-whitelist.patch"
+		eapply "${FILESDIR}/${PF}-doc-whitelist.patch"
 }
 
 src_compile() {
