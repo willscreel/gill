@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit toolchain-funcs
+inherit git-r3 toolchain-funcs
 
 DESCRIPTION="A list based tiling window manager in the vein of dwm, bspwm, and xmonad."
 HOMEPAGE="https://bitbucket.org/natemaia/dk"
