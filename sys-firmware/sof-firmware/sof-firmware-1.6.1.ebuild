@@ -14,6 +14,7 @@ KEYWORDS="amd64"
 IUSE=""
 
 S=${WORKDIR}/sof-bin-stable-v${PV}
+SOF_VERSION=${PV}
 
 src_compile() {
 	sed -i -e '1i #!/bin/bash\nset -e' \
