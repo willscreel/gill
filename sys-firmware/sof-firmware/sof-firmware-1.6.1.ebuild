@@ -14,15 +14,13 @@ KEYWORDS="amd64"
 IUSE=""
 
 S=${WORKDIR}/sof-bin-stable-v${PV}
-SOF_VERSION=${PV}
 
 src_compile() {
 	sed -i -e '1i #!/bin/bash\nset -e' \
-		   -e '/^ROOT=/d' \
-		   -e "s/^VERSION=.*/VERSION=v${PV}/" go.sh || die
+		   -e '/^ROOT=/d' go.sh || die
 }
 
 src_install() {
 	mkdir -p ${D}/lib/firmware || die
-	ROOT=${D} ${S}/go.sh || die
+	SOF_VERSION=v${PV} ROOT=${D} ${S}/go.sh || die
 }
