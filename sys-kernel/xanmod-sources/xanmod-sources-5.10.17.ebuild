@@ -11,7 +11,7 @@ K_NOSETEXTRAVERSION="1"
 inherit kernel-2
 detect_version
 
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 HOMEPAGE="https://xanmod.org"
 IUSE=""
 
